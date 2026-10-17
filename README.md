@@ -212,6 +212,22 @@ See [benchmark commands, hardware, raw results, and limitations](docs/benchmarks
 and [validation record](docs/validation.md). CI also produces a coverage artifact.
 No throughput or coverage figure should be copied to a resume without its run context.
 
+The 18 October 2026 pilot used Clang 21.1.8, six WSL-visible CPUs on an Intel
+Core Ultra 5 125H, 50 loopback clients, pipeline 16, 32-byte values, 50 hot keys,
+and **AOF disabled**. Medians of three short 100,000-operation mixed SET/GET runs:
+
+| Server | Operations/s | Run p99 |
+|---|---:|---:|
+| mini-redis epoll | 710,004 | 2.443 ms |
+| mini-redis thread pool | 525,067 | 2.468 ms |
+| Redis 8.0.5 | 1,103,010 | 1.641 ms |
+
+These are exploratory measurements on a shared host. The separate AOF pilot
+used tmpfs and short samples, so it does not measure disk durability performance.
+The benchmark document records the complete settings and raw results. CI measured
+94.6% line coverage for core/protocol/persistence and gates the initial `v1.0.0`
+source release on every required check, including ten-minute fuzz runs.
+
 ## Limitations
 
 - Linux/IPv4 only. No TLS, authentication, ACLs, or hostile-network hardening.

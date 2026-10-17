@@ -15,14 +15,17 @@ root = Path(__file__).resolve().parents[1]
 build = root / os.environ.get("BUILD_DIR", "build")
 redis_dir = Path(os.environ.get("REDIS_BIN_DIR", "/usr/bin"))
 output = root / "docs/benchmark-results/local-2026-10-18.json"
+compiler = next(line.split("=", 1)[1] for line in (build / "CMakeCache.txt").read_text().splitlines()
+                if line.startswith("CMAKE_CXX_COMPILER:"))
 report = {
     "date": datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=5, minutes=30))).isoformat(),
     "system": subprocess.check_output(["uname", "-a"], text=True).strip(),
     "cpu": json.loads(subprocess.check_output(["lscpu", "--json"], text=True)),
-    "compiler": subprocess.check_output(["g++", "--version"], text=True).splitlines()[0],
+    "compiler": subprocess.check_output([compiler, "--version"], text=True).splitlines()[0],
     "redis_cli": subprocess.check_output([str(redis_dir / "redis-cli"), "--version"], text=True).strip(),
     "revision": subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=root, text=True).strip(),
     "build_flags": (build / "CMakeFiles/mini_redis_lib.dir/flags.make").read_text(),
+    "filesystem": json.loads(subprocess.check_output(["findmnt", "--json", "--target", tempfile.gettempdir()], text=True)),
     "environment": "WSL2 on shared Windows host; CPU governor/power policy not controlled; loopback TCP; temp data on WSL /tmp; no CPU affinity",
     "notes": "Focused matrix, not full brief matrix. Three repetitions. Connection/prefill excluded. Exact completion latencies from pipeline batch start.",
     "cases": [],

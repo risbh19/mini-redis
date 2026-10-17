@@ -1,0 +1,87 @@
+{
+  "covered": 584,
+  "lines": 622,
+  "line_coverage_percent": 93.89067524115755,
+  "files": [
+    {
+      "file": "src/core/expiry.cpp",
+      "covered": 17,
+      "lines": 17
+    },
+    {
+      "file": "src/core/expiry.hpp",
+      "covered": 5,
+      "lines": 5
+    },
+    {
+      "file": "src/core/hash_table.hpp",
+      "covered": 88,
+      "lines": 90
+    },
+    {
+      "file": "src/core/lru.cpp",
+      "covered": 20,
+      "lines": 24
+    },
+    {
+      "file": "src/core/lru.hpp",
+      "covered": 0,
+      "lines": 0
+    },
+    {
+      "file": "src/core/store.cpp",
+      "covered": 187,
+      "lines": 194
+    },
+    {
+      "file": "src/core/store.hpp",
+      "covered": 11,
+      "lines": 13
+    },
+    {
+      "file": "src/persistence/aof.cpp",
+      "covered": 95,
+      "lines": 97
+    },
+    {
+      "file": "src/persistence/aof.hpp",
+      "covered": 0,
+      "lines": 2
+    },
+    {
+      "file": "src/persistence/crc32.cpp",
+      "covered": 6,
+      "lines": 6
+    },
+    {
+      "file": "src/persistence/snapshot.cpp",
+      "covered": 63,
+      "lines": 68
+    },
+    {
+      "file": "src/protocol/cli_formatter.cpp",
+      "covered": 5,
+      "lines": 16
+    },
+    {
+      "file": "src/protocol/reply.hpp",
+      "covered": 8,
+      "lines": 8
+    },
+    {
+      "file": "src/protocol/resp_parser.cpp",
+      "covered": 57,
+      "lines": 58
+    },
+    {
+      "file": "src/protocol/resp_parser.hpp",
+      "covered": 1,
+      "lines": 1
+    },
+    {
+      "file": "src/protocol/resp_writer.cpp",
+      "covered": 21,
+      "lines": 23
+    }
+  ]
+}

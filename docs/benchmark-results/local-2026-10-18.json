@@ -1,0 +1,1348 @@
+{
+  "date": "2026-10-18T01:35:06.265022+05:30",
+  "system": "Linux risbh19 6.18.54.1-microsoft-standard-WSL2 #1 SMP PREEMPT_DYNAMIC Tue Oct  6 19:13:07 UTC 2026 x86_64 GNU/Linux",
+  "cpu": {
+    "lscpu": [
+      {
+        "field": "Architecture:",
+        "data": "x86_64"
+      },
+      {
+        "field": "CPU op-mode(s):",
+        "data": "32-bit, 64-bit"
+      },
+      {
+        "field": "Address sizes:",
+        "data": "46 bits physical, 48 bits virtual"
+      },
+      {
+        "field": "Byte Order:",
+        "data": "Little Endian"
+      },
+      {
+        "field": "CPU(s):",
+        "data": "6"
+      },
+      {
+        "field": "On-line CPU(s) list:",
+        "data": "0-5"
+      },
+      {
+        "field": "Vendor ID:",
+        "data": "GenuineIntel"
+      },
+      {
+        "field": "Model name:",
+        "data": "Intel(R) Core(TM) Ultra 5 125H"
+      },
+      {
+        "field": "CPU family:",
+        "data": "6"
+      },
+      {
+        "field": "Model:",
+        "data": "170"
+      },
+      {
+        "field": "Thread(s) per core:",
+        "data": "2"
+      },
+      {
+        "field": "Core(s) per socket:",
+        "data": "3"
+      },
+      {
+        "field": "Socket(s):",
+        "data": "1"
+      },
+      {
+        "field": "Stepping:",
+        "data": "4"
+      },
+      {
+        "field": "BogoMIPS:",
+        "data": "5990.40"
+      },
+      {
+        "field": "Flags:",
+        "data": "fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss ht syscall nx pdpe1gb rdtscp lm constant_tsc rep_good nopl xtopology tsc_reliable nonstop_tsc cpuid tsc_known_freq pni pclmulqdq vmx ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch ssbd ibrs ibpb stibp ibrs_enhanced tpr_shadow ept vpid ept_ad fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid rdseed adx smap clflushopt clwb sha_ni xsaveopt xsavec xgetbv1 xsaves avx_vnni vnmi umip waitpkg gfni vaes vpclmulqdq rdpid movdiri movdir64b fsrm md_clear serialize ibt flush_l1d arch_capabilities"
+      },
+      {
+        "field": "Virtualization:",
+        "data": "VT-x"
+      },
+      {
+        "field": "Hypervisor vendor:",
+        "data": "Microsoft"
+      },
+      {
+        "field": "Virtualization type:",
+        "data": "full"
+      },
+      {
+        "field": "L1d cache:",
+        "data": "144 KiB (3 instances)"
+      },
+      {
+        "field": "L1i cache:",
+        "data": "192 KiB (3 instances)"
+      },
+      {
+        "field": "L2 cache:",
+        "data": "6 MiB (3 instances)"
+      },
+      {
+        "field": "L3 cache:",
+        "data": "18 MiB (1 instance)"
+      },
+      {
+        "field": "NUMA node(s):",
+        "data": "1"
+      },
+      {
+        "field": "NUMA node0 CPU(s):",
+        "data": "0-5"
+      },
+      {
+        "field": "Vulnerability Gather data sampling:",
+        "data": "Not affected"
+      },
+      {
+        "field": "Vulnerability Ghostwrite:",
+        "data": "Not affected"
+      },
+      {
+        "field": "Vulnerability Indirect target selection:",
+        "data": "Not affected"
+      },
+      {
+        "field": "Vulnerability Itlb multihit:",
+        "data": "Not affected"
+      },
+      {
+        "field": "Vulnerability L1tf:",
+        "data": "Not affected"
+      },
+      {
+        "field": "Vulnerability Mds:",
+        "data": "Not affected"
+      },
+      {
+        "field": "Vulnerability Meltdown:",
+        "data": "Not affected"
+      },
+      {
+        "field": "Vulnerability Mmio stale data:",
+        "data": "Not affected"
+      },
+      {
+        "field": "Vulnerability Old microcode:",
+        "data": "Not affected"
+      },
+      {
+        "field": "Vulnerability Reg file data sampling:",
+        "data": "Not affected"
+      },
+      {
+        "field": "Vulnerability Retbleed:",
+        "data": "Mitigation; Enhanced IBRS"
+      },
+      {
+        "field": "Vulnerability Spec rstack overflow:",
+        "data": "Not affected"
+      },
+      {
+        "field": "Vulnerability Spec store bypass:",
+        "data": "Mitigation; Speculative Store Bypass disabled via prctl"
+      },
+      {
+        "field": "Vulnerability Spectre v1:",
+        "data": "Mitigation; usercopy/swapgs barriers and __user pointer sanitization"
+      },
+      {
+        "field": "Vulnerability Spectre v2:",
+        "data": "Mitigation; Enhanced / Automatic IBRS; IBPB conditional; PBRSB-eIBRS SW sequence; BHI BHI_DIS_S"
+      },
+      {
+        "field": "Vulnerability Srbds:",
+        "data": "Not affected"
+      },
+      {
+        "field": "Vulnerability Tsa:",
+        "data": "Not affected"
+      },
+      {
+        "field": "Vulnerability Tsx async abort:",
+        "data": "Not affected"
+      },
+      {
+        "field": "Vulnerability Vmscape:",
+        "data": "Not affected"
+      }
+    ]
+  },
+  "compiler": "Ubuntu clang version 21.1.8 (6ubuntu1)",
+  "redis_cli": "redis-cli 8.0.5",
+  "revision": "0507baf7ec657183a6486ea6df1ed5cd7f56bba4",
+  "build_flags": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.2\n\n# compile CXX with /mnt/c/Users/palri/OneDrive/Documents/ChatGPT/Mini Redis/.tools/root/usr/lib/llvm-21/bin/clang++\nCXX_DEFINES = \n\nCXX_INCLUDES = -I\"/mnt/c/Users/palri/OneDrive/Documents/ChatGPT/Mini Redis/src\"\n\nCXX_FLAGS = -O3 -DNDEBUG -std=c++17 -Wall -Wextra -Wpedantic -Wshadow -Wconversion\n\n",
+  "environment": "WSL2 on shared Windows host; CPU governor/power policy not controlled; loopback TCP; temp data on WSL /tmp; no CPU affinity",
+  "notes": "Focused matrix, not full brief matrix. Three repetitions. Connection/prefill excluded. Exact completion latencies from pipeline batch start.",
+  "cases": [
+    {
+      "name": "epoll/aof-no/everysec",
+      "server_command": [
+        "/mnt/c/Users/palri/OneDrive/Documents/ChatGPT/Mini Redis/build-clang/mini-redis",
+        "--port",
+        "0",
+        "--dir",
+        "/tmp/mini-redis-bench-g_34o1tv",
+        "--io-model",
+        "epoll",
+        "--appendonly",
+        "no",
+        "--appendfsync",
+        "everysec",
+        "--workers",
+        "4"
+      ],
+      "workloads": [
+        {
+          "command": [
+            "/mnt/c/Users/palri/OneDrive/Documents/ChatGPT/Mini Redis/build-clang/load_gen",
+            "--port",
+            "46821",
+            "--requests",
+            "100000",
+            "--clients",
+            "50",
+            "--pipeline",
+            "16",
+            "--workload",
+            "set"
+          ],
+          "runs": [
+            {
+              "requests": 100000,
+              "clients": 50,
+              "pipeline": 16,
+              "workload": "set",
+              "seconds": 0.155264,
+              "ops_per_sec": 644064,
+              "p50_us": 1058.36,
+              "p95_us": 2215.22,
+              "p99_us": 2918.19,
+              "p999_us": 3937.21
+            },
+            {
+              "requests": 100000,
+              "clients": 50,
+              "pipeline": 16,
+              "workload": "set",
+              "seconds": 0.14553,
+              "ops_per_sec": 687141,
+              "p50_us": 1071.27,
+              "p95_us": 1769.64,
+              "p99_us": 2260.58,
+              "p999_us": 3590.14
+            },
+            {
+              "requests": 100000,
+              "clients": 50,
+              "pipeline": 16,
+              "workload": "set",
+              "seconds": 0.144998,
+              "ops_per_sec": 689664,
+              "p50_us": 1073.41,
+              "p95_us": 1880.25,
+              "p99_us": 2255.18,
+              "p999_us": 3150.89
+            }
+          ],
+          "median_ops_per_sec": 687141,
+          "median_p99_us": 2260.58
+        },
+        {
+          "command": [
+            "/mnt/c/Users/palri/OneDrive/Documents/ChatGPT/Mini Redis/build-clang/load_gen",
+            "--port",
+            "46821",
+            "--requests",
+            "100000",
+            "--clients",
+            "50",
+            "--pipeline",
+            "16",
+            "--workload",
+            "get"
+          ],
+          "runs": [
+            {
+              "requests": 100000,
+              "clients": 50,
+              "pipeline": 16,
+              "workload": "get",
+              "seconds": 0.117961,
+              "ops_per_sec": 847737,
+              "p50_us": 912.635,
+              "p95_us": 1543.57,
+              "p99_us": 2686.77,
+              "p999_us": 5853.31
+            },
+            {
+              "requests": 100000,
+              "clients": 50,
+              "pipeline": 16,
+              "workload": "get",
+              "seconds": 0.13164,
+              "ops_per_sec": 759650,
+              "p50_us": 902.125,
+              "p95_us": 2127.02,
+              "p99_us": 4110.04,
+              "p999_us": 6477.82
+            },
+            {
+              "requests": 100000,
+              "clients": 50,
+              "pipeline": 16,
+              "workload": "get",
+              "seconds": 0.125396,
+              "ops_per_sec": 797475,
+              "p50_us": 920.905,
+              "p95_us": 1524.99,
+              "p99_us": 2184.54,
+              "p999_us": 2548.91
+            }
+          ],
+          "median_ops_per_sec": 797475,
+          "median_p99_us": 2686.77
+        },
+        {
+          "command": [
+            "/mnt/c/Users/palri/OneDrive/Documents/ChatGPT/Mini Redis/build-clang/load_gen",
+            "--port",
+            "46821",
+            "--requests",
+            "100000",
+            "--clients",
+            "50",
+            "--pipeline",
+            "16",
+            "--workload",
+            "mixed"
+          ],
+          "runs": [
+            {
+              "requests": 100000,
+              "clients": 50,
+              "pipeline": 16,
+              "workload": "mixed",
+              "seconds": 0.140844,
+              "ops_per_sec": 710004,
+              "p50_us": 1062.8,
+              "p95_us": 1714.78,
+              "p99_us": 2539.29,
+              "p999_us": 4317.41
+            },
+            {
+              "requests": 100000,
+              "clients": 50,
+              "pipeline": 16,
+              "workload": "mixed",
+              "seconds": 0.138242,
+              "ops_per_sec": 723368,
+              "p50_us": 1043.14,
+              "p95_us": 1670.72,
+              "p99_us": 2230.01,
+              "p999_us": 6488.48
+            },
+            {
+              "requests": 100000,
+              "clients": 50,
+              "pipeline": 16,
+              "workload": "mixed",
+              "seconds": 0.146902,
+              "ops_per_sec": 680727,
+              "p50_us": 1048.85,
+              "p95_us": 1874.12,
+              "p99_us": 2442.82,
+              "p999_us": 3348.35
+            }
+          ],
+          "median_ops_per_sec": 710004,
+          "median_p99_us": 2442.82
+        }
+      ],
+      "redis_benchmark_command": [
+        "/mnt/c/Users/palri/OneDrive/Documents/ChatGPT/Mini Redis/.tools/root/usr/bin/redis-benchmark",
+        "-p",
+        "46821",
+        "-t",
+        "set,get",
+        "-n",
+        "100000",
+        "-c",
+        "50",
+        "--csv"
+      ],
+      "redis_benchmark_raw": "\"test\",\"rps\",\"avg_latency_ms\",\"min_latency_ms\",\"p50_latency_ms\",\"p95_latency_ms\",\"p99_latency_ms\",\"max_latency_ms\"\n\"SET\",\"170940.17\",\"0.178\",\"0.032\",\"0.143\",\"0.351\",\"0.855\",\"2.703\"\n\"GET\",\"173913.05\",\"0.158\",\"0.040\",\"0.143\",\"0.239\",\"0.543\",\"1.751\"\n"
+    },
+    {
+      "name": "thread-pool/aof-no/everysec",
+      "server_command": [
+        "/mnt/c/Users/palri/OneDrive/Documents/ChatGPT/Mini Redis/build-clang/mini-redis",
+        "--port",
+        "0",
+        "--dir",
+        "/tmp/mini-redis-bench-kz183adb",
+        "--io-model",
+        "thread-pool",
+        "--appendonly",
+        "no",
+        "--appendfsync",
+        "everysec",
+        "--workers",
+        "4"
+      ],
+      "workloads": [
+        {
+          "command": [
+            "/mnt/c/Users/palri/OneDrive/Documents/ChatGPT/Mini Redis/build-clang/load_gen",
+            "--port",
+            "36667",
+            "--requests",
+            "100000",
+            "--clients",
+            "50",
+            "--pipeline",
+            "16",
+            "--workload",
+            "set"
+          ],
+          "runs": [
+            {
+              "requests": 100000,
+              "clients": 50,
+              "pipeline": 16,
+              "workload": "set",
+              "seconds": 0.193229,
+              "ops_per_sec": 517521,
+              "p50_us": 1495.74,
+              "p95_us": 2145.58,
+              "p99_us": 2680.58,
+              "p999_us": 4363.7
+            },
+            {
+              "requests": 100000,
+              "clients": 50,
+              "pipeline": 16,
+              "workload": "set",
+              "seconds": 0.187294,
+              "ops_per_sec": 533919,
+              "p50_us": 1446.19,
+              "p95_us": 2071.92,
+              "p99_us": 2630.23,
+              "p999_us": 3507.41
+            },
+            {
+              "requests": 100000,
+              "clients": 50,
+              "pipeline": 16,
+              "workload": "set",
+              "seconds": 0.17564,
+              "ops_per_sec": 569346,
+              "p50_us": 858.361,
+              "p95_us": 2385.47,
+              "p99_us": 6045.29,
+              "p999_us": 24339.6
+            }
+          ],
+          "median_ops_per_sec": 533919,
+          "median_p99_us": 2680.58
+        },
+        {
+          "command": [
+            "/mnt/c/Users/palri/OneDrive/Documents/ChatGPT/Mini Redis/build-clang/load_gen",
+            "--port",
+            "36667",
+            "--requests",
+            "100000",
+            "--clients",
+            "50",
+            "--pipeline",
+            "16",
+            "--workload",
+            "get"
+          ],
+          "runs": [
+            {
+              "requests": 100000,
+              "clients": 50,
+              "pipeline": 16,
+              "workload": "get",
+              "seconds": 0.0993358,
+              "ops_per_sec": 1006690.0,
+              "p50_us": 644.103,
+              "p95_us": 1461.71,
+              "p99_us": 2131.39,
+              "p999_us": 10106.5
+            },
+            {
+              "requests": 100000,
+              "clients": 50,
+              "pipeline": 16,
+              "workload": "get",
+              "seconds": 0.12353,
+              "ops_per_sec": 809522,
+              "p50_us": 754.64,
+              "p95_us": 1853.57,
+              "p99_us": 3330.3,
+              "p999_us": 16280.6
+            },
+            {
+              "requests": 100000,
+              "clients": 50,
+              "pipeline": 16,
+              "workload": "get",
+              "seconds": 0.121626,
+              "ops_per_sec": 822190,
+              "p50_us": 614.449,
+              "p95_us": 2662.81,
+              "p99_us": 4890.62,
+              "p999_us": 11100.9
+            }
+          ],
+          "median_ops_per_sec": 822190,
+          "median_p99_us": 3330.3
+        },
+        {
+          "command": [
+            "/mnt/c/Users/palri/OneDrive/Documents/ChatGPT/Mini Redis/build-clang/load_gen",
+            "--port",
+            "36667",
+            "--requests",
+            "100000",
+            "--clients",
+            "50",
+            "--pipeline",
+            "16",
+            "--workload",
+            "mixed"
+          ],
+          "runs": [
+            {
+              "requests": 100000,
+              "clients": 50,
+              "pipeline": 16,
+              "workload": "mixed",
+              "seconds": 0.190452,
+              "ops_per_sec": 525067,
+              "p50_us": 1475.32,
+              "p95_us": 2086.67,
+              "p99_us": 2468.47,
+              "p999_us": 3310.53
+            },
+            {
+              "requests": 100000,
+              "clients": 50,
+              "pipeline": 16,
+              "workload": "mixed",
+              "seconds": 0.195881,
+              "ops_per_sec": 510514,
+              "p50_us": 1494.96,
+              "p95_us": 2100.55,
+              "p99_us": 2487.16,
+              "p999_us": 7608.48
+            },
+            {
+              "requests": 100000,
+              "clients": 50,
+              "pipeline": 16,
+              "workload": "mixed",
+              "seconds": 0.186848,
+              "ops_per_sec": 535194,
+              "p50_us": 1445.1,
+              "p95_us": 1840.72,
+              "p99_us": 2145.9,
+              "p999_us": 4539.19
+            }
+          ],
+          "median_ops_per_sec": 525067,
+          "median_p99_us": 2468.47
+        }
+      ],
+      "redis_benchmark_command": [
+        "/mnt/c/Users/palri/OneDrive/Documents/ChatGPT/Mini Redis/.tools/root/usr/bin/redis-benchmark",
+        "-p",
+        "36667",
+        "-t",
+        "set,get",
+        "-n",
+        "100000",
+        "-c",
+        "50",
+        "--csv"
+      ],
+      "redis_benchmark_raw": "\"test\",\"rps\",\"avg_latency_ms\",\"min_latency_ms\",\"p50_latency_ms\",\"p95_latency_ms\",\"p99_latency_ms\",\"max_latency_ms\"\n\"SET\",\"114942.53\",\"0.367\",\"0.048\",\"0.327\",\"0.663\",\"0.951\",\"15.911\"\n\"GET\",\"170940.17\",\"0.207\",\"0.032\",\"0.191\",\"0.359\",\"0.471\",\"0.895\"\n"
+    },
+    {
+      "name": "epoll/aof-yes/no",
+      "server_command": [
+        "/mnt/c/Users/palri/OneDrive/Documents/ChatGPT/Mini Redis/build-clang/mini-redis",
+        "--port",
+        "0",
+        "--dir",
+        "/tmp/mini-redis-bench-62y4csqz",
+        "--io-model",
+        "epoll",
+        "--appendonly",
+        "yes",
+        "--appendfsync",
+        "no",
+        "--workers",
+        "4"
+      ],
+      "workloads": [
+        {
+          "command": [
+            "/mnt/c/Users/palri/OneDrive/Documents/ChatGPT/Mini Redis/build-clang/load_gen",
+            "--port",
+            "35637",
+            "--requests",
+            "10000",
+            "--clients",
+            "50",
+            "--pipeline",
+            "16",
+            "--workload",
+            "set"
+          ],
+          "runs": [
+            {
+              "requests": 10000,
+              "clients": 50,
+              "pipeline": 16,
+              "workload": "set",
+              "seconds": 0.0276938,
+              "ops_per_sec": 361092,
+              "p50_us": 1772.5,
+              "p95_us": 3704.59,
+              "p99_us": 4153.87,
+              "p999_us": 5941.38
+            },
+            {
+              "requests": 10000,
+              "clients": 50,
+              "pipeline": 16,
+              "workload": "set",
+              "seconds": 0.0259218,
+              "ops_per_sec": 385776,
+              "p50_us": 1781.42,
+              "p95_us": 2379.09,
+              "p99_us": 3577.61,
+              "p999_us": 4276.5
+            },
+            {
+              "requests": 10000,
+              "clients": 50,
+              "pipeline": 16,
+              "workload": "set",
+              "seconds": 0.0243106,
+              "ops_per_sec": 411343,
+              "p50_us": 1764.11,
+              "p95_us": 2248.43,
+              "p99_us": 3545.63,
+              "p999_us": 3816.72
+            }
+          ],
+          "median_ops_per_sec": 385776,
+          "median_p99_us": 3577.61
+        },
+        {
+          "command": [
+            "/mnt/c/Users/palri/OneDrive/Documents/ChatGPT/Mini Redis/build-clang/load_gen",
+            "--port",
+            "35637",
+            "--requests",
+            "10000",
+            "--clients",
+            "50",
+            "--pipeline",
+            "16",
+            "--workload",
+            "get"
+          ],
+          "runs": [
+            {
+              "requests": 10000,
+              "clients": 50,
+              "pipeline": 16,
+              "workload": "get",
+              "seconds": 0.0127224,
+              "ops_per_sec": 786014,
+              "p50_us": 834.544,
+              "p95_us": 1355.33,
+              "p99_us": 2008.55,
+              "p999_us": 2682.72
+            },
+            {
+              "requests": 10000,
+              "clients": 50,
+              "pipeline": 16,
+              "workload": "get",
+              "seconds": 0.0114355,
+              "ops_per_sec": 874473,
+              "p50_us": 672.731,
+              "p95_us": 835.639,
+              "p99_us": 1456.74,
+              "p999_us": 3818.32
+            },
+            {
+              "requests": 10000,
+              "clients": 50,
+              "pipeline": 16,
+              "workload": "get",
+              "seconds": 0.0126362,
+              "ops_per_sec": 791378,
+              "p50_us": 754.845,
+              "p95_us": 1466.58,
+              "p99_us": 2727.55,
+              "p999_us": 3375.25
+            }
+          ],
+          "median_ops_per_sec": 791378,
+          "median_p99_us": 2008.55
+        },
+        {
+          "command": [
+            "/mnt/c/Users/palri/OneDrive/Documents/ChatGPT/Mini Redis/build-clang/load_gen",
+            "--port",
+            "35637",
+            "--requests",
+            "10000",
+            "--clients",
+            "50",
+            "--pipeline",
+            "16",
+            "--workload",
+            "mixed"
+          ],
+          "runs": [
+            {
+              "requests": 10000,
+              "clients": 50,
+              "pipeline": 16,
+              "workload": "mixed",
+              "seconds": 0.0195701,
+              "ops_per_sec": 510983,
+              "p50_us": 1435.93,
+              "p95_us": 1592.32,
+              "p99_us": 2897.22,
+              "p999_us": 3033.95
+            },
+            {
+              "requests": 10000,
+              "clients": 50,
+              "pipeline": 16,
+              "workload": "mixed",
+              "seconds": 0.0215509,
+              "ops_per_sec": 464018,
+              "p50_us": 1447.95,
+              "p95_us": 2769.46,
+              "p99_us": 2908.26,
+              "p999_us": 4394.69
+            },
+            {
+              "requests": 10000,
+              "clients": 50,
+              "pipeline": 16,
+              "workload": "mixed",
+              "seconds": 0.0204661,
+              "ops_per_sec": 488612,
+              "p50_us": 1451.05,
+              "p95_us": 1780.45,
+              "p99_us": 2911.4,
+              "p999_us": 3192.58
+            }
+          ],
+          "median_ops_per_sec": 488612,
+          "median_p99_us": 2908.26
+        }
+      ]
+    },
+    {
+      "name": "epoll/aof-yes/everysec",
+      "server_command": [
+        "/mnt/c/Users/palri/OneDrive/Documents/ChatGPT/Mini Redis/build-clang/mini-redis",
+        "--port",
+        "0",
+        "--dir",
+        "/tmp/mini-redis-bench-_qoa8b2o",
+        "--io-model",
+        "epoll",
+        "--appendonly",
+        "yes",
+        "--appendfsync",
+        "everysec",
+        "--workers",
+        "4"
+      ],
+      "workloads": [
+        {
+          "command": [
+            "/mnt/c/Users/palri/OneDrive/Documents/ChatGPT/Mini Redis/build-clang/load_gen",
+            "--port",
+            "38015",
+            "--requests",
+            "10000",
+            "--clients",
+            "50",
+            "--pipeline",
+            "16",
+            "--workload",
+            "set"
+          ],
+          "runs": [
+            {
+              "requests": 10000,
+              "clients": 50,
+              "pipeline": 16,
+              "workload": "set",
+              "seconds": 0.0263565,
+              "ops_per_sec": 379413,
+              "p50_us": 1771.06,
+              "p95_us": 2169.98,
+              "p99_us": 3549.1,
+              "p999_us": 4130.49
+            },
+            {
+              "requests": 10000,
+              "clients": 50,
+              "pipeline": 16,
+              "workload": "set",
+              "seconds": 0.0252225,
+              "ops_per_sec": 396471,
+              "p50_us": 1779.79,
+              "p95_us": 2309.23,
+              "p99_us": 3609.48,
+              "p999_us": 4218.74
+            },
+            {
+              "requests": 10000,
+              "clients": 50,
+              "pipeline": 16,
+              "workload": "set",
+              "seconds": 0.0242553,
+              "ops_per_sec": 412280,
+              "p50_us": 1766.49,
+              "p95_us": 1945.11,
+              "p99_us": 3592.11,
+              "p999_us": 3716.07
+            }
+          ],
+          "median_ops_per_sec": 396471,
+          "median_p99_us": 3592.11
+        },
+        {
+          "command": [
+            "/mnt/c/Users/palri/OneDrive/Documents/ChatGPT/Mini Redis/build-clang/load_gen",
+            "--port",
+            "38015",
+            "--requests",
+            "10000",
+            "--clients",
+            "50",
+            "--pipeline",
+            "16",
+            "--workload",
+            "get"
+          ],
+          "runs": [
+            {
+              "requests": 10000,
+              "clients": 50,
+              "pipeline": 16,
+              "workload": "get",
+              "seconds": 0.0127941,
+              "ops_per_sec": 781608,
+              "p50_us": 870.924,
+              "p95_us": 1244.75,
+              "p99_us": 1610.18,
+              "p999_us": 2088.78
+            },
+            {
+              "requests": 10000,
+              "clients": 50,
+              "pipeline": 16,
+              "workload": "get",
+              "seconds": 0.0132225,
+              "ops_per_sec": 756286,
+              "p50_us": 883.722,
+              "p95_us": 1607.74,
+              "p99_us": 2379.41,
+              "p999_us": 2684.88
+            },
+            {
+              "requests": 10000,
+              "clients": 50,
+              "pipeline": 16,
+              "workload": "get",
+              "seconds": 0.0128125,
+              "ops_per_sec": 780489,
+              "p50_us": 799.893,
+              "p95_us": 1428.66,
+              "p99_us": 1604.77,
+              "p999_us": 2677.66
+            }
+          ],
+          "median_ops_per_sec": 780489,
+          "median_p99_us": 1610.18
+        },
+        {
+          "command": [
+            "/mnt/c/Users/palri/OneDrive/Documents/ChatGPT/Mini Redis/build-clang/load_gen",
+            "--port",
+            "38015",
+            "--requests",
+            "10000",
+            "--clients",
+            "50",
+            "--pipeline",
+            "16",
+            "--workload",
+            "mixed"
+          ],
+          "runs": [
+            {
+              "requests": 10000,
+              "clients": 50,
+              "pipeline": 16,
+              "workload": "mixed",
+              "seconds": 0.0203072,
+              "ops_per_sec": 492437,
+              "p50_us": 1387.03,
+              "p95_us": 2241.32,
+              "p99_us": 3555.56,
+              "p999_us": 4644.91
+            },
+            {
+              "requests": 10000,
+              "clients": 50,
+              "pipeline": 16,
+              "workload": "mixed",
+              "seconds": 0.0200593,
+              "ops_per_sec": 498521,
+              "p50_us": 1421.09,
+              "p95_us": 2196.38,
+              "p99_us": 2891.78,
+              "p999_us": 3617.22
+            },
+            {
+              "requests": 10000,
+              "clients": 50,
+              "pipeline": 16,
+              "workload": "mixed",
+              "seconds": 0.0254782,
+              "ops_per_sec": 392492,
+              "p50_us": 1683.94,
+              "p95_us": 3019.7,
+              "p99_us": 3564.46,
+              "p999_us": 4622.23
+            }
+          ],
+          "median_ops_per_sec": 492437,
+          "median_p99_us": 3555.56
+        }
+      ]
+    },
+    {
+      "name": "epoll/aof-yes/always",
+      "server_command": [
+        "/mnt/c/Users/palri/OneDrive/Documents/ChatGPT/Mini Redis/build-clang/mini-redis",
+        "--port",
+        "0",
+        "--dir",
+        "/tmp/mini-redis-bench-dda4kk6w",
+        "--io-model",
+        "epoll",
+        "--appendonly",
+        "yes",
+        "--appendfsync",
+        "always",
+        "--workers",
+        "4"
+      ],
+      "workloads": [
+        {
+          "command": [
+            "/mnt/c/Users/palri/OneDrive/Documents/ChatGPT/Mini Redis/build-clang/load_gen",
+            "--port",
+            "34751",
+            "--requests",
+            "10000",
+            "--clients",
+            "50",
+            "--pipeline",
+            "16",
+            "--workload",
+            "set"
+          ],
+          "runs": [
+            {
+              "requests": 10000,
+              "clients": 50,
+              "pipeline": 16,
+              "workload": "set",
+              "seconds": 0.0276281,
+              "ops_per_sec": 361951,
+              "p50_us": 1859.9,
+              "p95_us": 3200.52,
+              "p99_us": 4721.11,
+              "p999_us": 5583.66
+            },
+            {
+              "requests": 10000,
+              "clients": 50,
+              "pipeline": 16,
+              "workload": "set",
+              "seconds": 0.0291179,
+              "ops_per_sec": 343432,
+              "p50_us": 2003.87,
+              "p95_us": 2899.99,
+              "p99_us": 3513.73,
+              "p999_us": 4147.69
+            },
+            {
+              "requests": 10000,
+              "clients": 50,
+              "pipeline": 16,
+              "workload": "set",
+              "seconds": 0.0261917,
+              "ops_per_sec": 381800,
+              "p50_us": 1827.21,
+              "p95_us": 2574.15,
+              "p99_us": 3641.89,
+              "p999_us": 4686.73
+            }
+          ],
+          "median_ops_per_sec": 361951,
+          "median_p99_us": 3641.89
+        },
+        {
+          "command": [
+            "/mnt/c/Users/palri/OneDrive/Documents/ChatGPT/Mini Redis/build-clang/load_gen",
+            "--port",
+            "34751",
+            "--requests",
+            "10000",
+            "--clients",
+            "50",
+            "--pipeline",
+            "16",
+            "--workload",
+            "get"
+          ],
+          "runs": [
+            {
+              "requests": 10000,
+              "clients": 50,
+              "pipeline": 16,
+              "workload": "get",
+              "seconds": 0.0181498,
+              "ops_per_sec": 550971,
+              "p50_us": 872.137,
+              "p95_us": 2659.83,
+              "p99_us": 3000.29,
+              "p999_us": 5651.14
+            },
+            {
+              "requests": 10000,
+              "clients": 50,
+              "pipeline": 16,
+              "workload": "get",
+              "seconds": 0.00850027,
+              "ops_per_sec": 1176430.0,
+              "p50_us": 481.703,
+              "p95_us": 976.067,
+              "p99_us": 1140.55,
+              "p999_us": 3312.57
+            },
+            {
+              "requests": 10000,
+              "clients": 50,
+              "pipeline": 16,
+              "workload": "get",
+              "seconds": 0.011291,
+              "ops_per_sec": 885658,
+              "p50_us": 743.325,
+              "p95_us": 1464.48,
+              "p99_us": 1638.37,
+              "p999_us": 3872.76
+            }
+          ],
+          "median_ops_per_sec": 885658,
+          "median_p99_us": 1638.37
+        },
+        {
+          "command": [
+            "/mnt/c/Users/palri/OneDrive/Documents/ChatGPT/Mini Redis/build-clang/load_gen",
+            "--port",
+            "34751",
+            "--requests",
+            "10000",
+            "--clients",
+            "50",
+            "--pipeline",
+            "16",
+            "--workload",
+            "mixed"
+          ],
+          "runs": [
+            {
+              "requests": 10000,
+              "clients": 50,
+              "pipeline": 16,
+              "workload": "mixed",
+              "seconds": 0.021927,
+              "ops_per_sec": 456060,
+              "p50_us": 1554.11,
+              "p95_us": 2186.59,
+              "p99_us": 3065.42,
+              "p999_us": 4041.83
+            },
+            {
+              "requests": 10000,
+              "clients": 50,
+              "pipeline": 16,
+              "workload": "mixed",
+              "seconds": 0.0256495,
+              "ops_per_sec": 389871,
+              "p50_us": 1579.66,
+              "p95_us": 3947.79,
+              "p99_us": 5015.52,
+              "p999_us": 6413.47
+            },
+            {
+              "requests": 10000,
+              "clients": 50,
+              "pipeline": 16,
+              "workload": "mixed",
+              "seconds": 0.0300184,
+              "ops_per_sec": 333129,
+              "p50_us": 1787.31,
+              "p95_us": 4005.75,
+              "p99_us": 4915.45,
+              "p999_us": 5833.99
+            }
+          ],
+          "median_ops_per_sec": 389871,
+          "median_p99_us": 4915.45
+        }
+      ]
+    },
+    {
+      "name": "redis",
+      "server_command": [
+        "/mnt/c/Users/palri/OneDrive/Documents/ChatGPT/Mini Redis/.tools/root/usr/bin/redis-server",
+        "--bind",
+        "127.0.0.1",
+        "--port",
+        "57393",
+        "--dir",
+        "/tmp/mini-redis-bench-97xs_fba",
+        "--save",
+        "",
+        "--appendonly",
+        "no",
+        "--loglevel",
+        "warning"
+      ],
+      "workloads": [
+        {
+          "command": [
+            "/mnt/c/Users/palri/OneDrive/Documents/ChatGPT/Mini Redis/build-clang/load_gen",
+            "--port",
+            "57393",
+            "--requests",
+            "100000",
+            "--clients",
+            "50",
+            "--pipeline",
+            "16",
+            "--workload",
+            "set"
+          ],
+          "runs": [
+            {
+              "requests": 100000,
+              "clients": 50,
+              "pipeline": 16,
+              "workload": "set",
+              "seconds": 0.0756321,
+              "ops_per_sec": 1322190.0,
+              "p50_us": 455.793,
+              "p95_us": 1314.88,
+              "p99_us": 2765.18,
+              "p999_us": 4464.03
+            },
+            {
+              "requests": 100000,
+              "clients": 50,
+              "pipeline": 16,
+              "workload": "set",
+              "seconds": 0.0735469,
+              "ops_per_sec": 1359680.0,
+              "p50_us": 516.038,
+              "p95_us": 1026.13,
+              "p99_us": 1294.45,
+              "p999_us": 1607.53
+            },
+            {
+              "requests": 100000,
+              "clients": 50,
+              "pipeline": 16,
+              "workload": "set",
+              "seconds": 0.0909445,
+              "ops_per_sec": 1099570.0,
+              "p50_us": 696.495,
+              "p95_us": 987.89,
+              "p99_us": 1334.14,
+              "p999_us": 1749.22
+            }
+          ],
+          "median_ops_per_sec": 1322190.0,
+          "median_p99_us": 1334.14
+        },
+        {
+          "command": [
+            "/mnt/c/Users/palri/OneDrive/Documents/ChatGPT/Mini Redis/build-clang/load_gen",
+            "--port",
+            "57393",
+            "--requests",
+            "100000",
+            "--clients",
+            "50",
+            "--pipeline",
+            "16",
+            "--workload",
+            "get"
+          ],
+          "runs": [
+            {
+              "requests": 100000,
+              "clients": 50,
+              "pipeline": 16,
+              "workload": "get",
+              "seconds": 0.089945,
+              "ops_per_sec": 1111790.0,
+              "p50_us": 727.041,
+              "p95_us": 944.943,
+              "p99_us": 1259.99,
+              "p999_us": 1727.04
+            },
+            {
+              "requests": 100000,
+              "clients": 50,
+              "pipeline": 16,
+              "workload": "get",
+              "seconds": 0.0888165,
+              "ops_per_sec": 1125920.0,
+              "p50_us": 322.565,
+              "p95_us": 1657.16,
+              "p99_us": 6821.9,
+              "p999_us": 9027.25
+            },
+            {
+              "requests": 100000,
+              "clients": 50,
+              "pipeline": 16,
+              "workload": "get",
+              "seconds": 0.0741405,
+              "ops_per_sec": 1348790.0,
+              "p50_us": 382.021,
+              "p95_us": 1237.78,
+              "p99_us": 3365.96,
+              "p999_us": 7203.14
+            }
+          ],
+          "median_ops_per_sec": 1125920.0,
+          "median_p99_us": 3365.96
+        },
+        {
+          "command": [
+            "/mnt/c/Users/palri/OneDrive/Documents/ChatGPT/Mini Redis/build-clang/load_gen",
+            "--port",
+            "57393",
+            "--requests",
+            "100000",
+            "--clients",
+            "50",
+            "--pipeline",
+            "16",
+            "--workload",
+            "mixed"
+          ],
+          "runs": [
+            {
+              "requests": 100000,
+              "clients": 50,
+              "pipeline": 16,
+              "workload": "mixed",
+              "seconds": 0.0798955,
+              "ops_per_sec": 1251640.0,
+              "p50_us": 562.6,
+              "p95_us": 917.266,
+              "p99_us": 2106.39,
+              "p999_us": 3154.02
+            },
+            {
+              "requests": 100000,
+              "clients": 50,
+              "pipeline": 16,
+              "workload": "mixed",
+              "seconds": 0.0966718,
+              "ops_per_sec": 1034430.0,
+              "p50_us": 732.858,
+              "p95_us": 1144.32,
+              "p99_us": 1640.51,
+              "p999_us": 2161.64
+            },
+            {
+              "requests": 100000,
+              "clients": 50,
+              "pipeline": 16,
+              "workload": "mixed",
+              "seconds": 0.0906606,
+              "ops_per_sec": 1103010.0,
+              "p50_us": 690.313,
+              "p95_us": 1072.13,
+              "p99_us": 1585.46,
+              "p999_us": 2022.69
+            }
+          ],
+          "median_ops_per_sec": 1103010.0,
+          "median_p99_us": 1640.51
+        }
+      ],
+      "redis_benchmark_command": [
+        "/mnt/c/Users/palri/OneDrive/Documents/ChatGPT/Mini Redis/.tools/root/usr/bin/redis-benchmark",
+        "-p",
+        "57393",
+        "-t",
+        "set,get",
+        "-n",
+        "100000",
+        "-c",
+        "50",
+        "--csv"
+      ],
+      "redis_benchmark_raw": "\"test\",\"rps\",\"avg_latency_ms\",\"min_latency_ms\",\"p50_latency_ms\",\"p95_latency_ms\",\"p99_latency_ms\",\"max_latency_ms\"\n\"SET\",\"163666.12\",\"0.175\",\"0.048\",\"0.151\",\"0.343\",\"0.599\",\"1.823\"\n\"GET\",\"170940.17\",\"0.166\",\"0.040\",\"0.143\",\"0.311\",\"0.503\",\"1.631\"\n"
+    }
+  ],
+  "filesystem": {
+    "target": "/tmp",
+    "fstype": "tmpfs",
+    "source": "tmpfs",
+    "note": "Verified with findmnt after the run; AOF measurements use RAM-backed storage."
+  },
+  "timing_limitations": "Short runs: 100000 operations without AOF and 10000 with AOF. The everysec runs may finish before a timer fsync; these are exploratory loopback smoke measurements, not disk durability performance."
+}
