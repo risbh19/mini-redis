@@ -76,3 +76,20 @@ jobs:
           python3 scripts/docker_smoke.py
           docker stop -t 15 mini-redis
           test "$(docker inspect mini-redis --format '{{.State.ExitCode}}')" = 0
+  release:
+    # Bootstrap the requested source release only after every required check passes.
+    needs: [build, sanitizers, fuzz, coverage, static-analysis, docker]
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Publish initial verified source release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if ! gh release view v1.0.0 >/dev/null 2>&1; then
+            gh release create v1.0.0 --target "$GITHUB_SHA" \
+              --title 'mini-redis v1.0.0' --notes-file CHANGELOG.md
+          fi
