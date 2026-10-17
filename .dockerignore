@@ -1,0 +1,8 @@
+.git
+.tools
+build*
+.data
+artifacts
+*.aof
+*.mrdb
+__pycache__

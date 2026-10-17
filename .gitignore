@@ -1,0 +1,14 @@
+/build*/
+/.tools/
+/.data/
+/artifacts/
+*.mrdb
+*.aof
+*.tmp
+*.gcda
+*.gcno
+__pycache__/
+compile_commands.json
+crash-*
+leak-*
+timeout-*

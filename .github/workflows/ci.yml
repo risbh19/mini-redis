@@ -1,0 +1,70 @@
+name: CI
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    strategy:
+      fail-fast: false
+      matrix:
+        compiler: [g++, clang++]
+        build_type: [Debug, Release]
+    steps:
+      - uses: actions/checkout@v4
+      - run: sudo apt-get update && sudo apt-get install -y g++ clang cmake redis-tools
+      - run: cmake -S . -B build -DCMAKE_CXX_COMPILER=${{ matrix.compiler }} -DCMAKE_BUILD_TYPE=${{ matrix.build_type }} -DCMAKE_CXX_FLAGS=-Werror
+      - run: cmake --build build -j 2
+      - run: ctest --test-dir build --output-on-failure -j 2
+      - run: bash scripts/smoke_test.sh build/mini-redis
+  sanitizers:
+    runs-on: ubuntu-24.04
+    strategy:
+      fail-fast: false
+      matrix:
+        sanitize: ['address,undefined', thread]
+    steps:
+      - uses: actions/checkout@v4
+      - run: cmake -S . -B build -DCMAKE_BUILD_TYPE=Debug -DSANITIZE=${{ matrix.sanitize }} -DCMAKE_CXX_FLAGS=-Werror
+      - run: cmake --build build -j 2
+      - run: ctest --test-dir build --output-on-failure -j 2
+        env:
+          ASAN_OPTIONS: detect_leaks=1
+          UBSAN_OPTIONS: halt_on_error=1
+          TSAN_OPTIONS: halt_on_error=1
+  fuzz:
+    runs-on: ubuntu-24.04
+    strategy:
+      fail-fast: false
+      matrix:
+        target: [resp_parser_fuzz, aof_fuzz]
+    steps:
+      - uses: actions/checkout@v4
+      - run: cmake -S . -B build -DCMAKE_CXX_COMPILER=clang++ -DBUILD_FUZZER=ON -DBUILD_TESTING=OFF
+      - run: cmake --build build --target ${{ matrix.target }} -j 2
+      - run: mkdir -p artifacts/parser-corpus artifacts/aof-corpus && python3 scripts/seed_fuzz.py artifacts
+      - run: BUILD_DIR=build bash scripts/run_fuzz.sh ${{ matrix.target }} 600
+  coverage:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - run: sudo apt-get update && sudo apt-get install -y gcovr
+      - run: cmake -S . -B build -DCMAKE_BUILD_TYPE=Debug -DENABLE_COVERAGE=ON
+      - run: cmake --build build -j 2 && ctest --test-dir build --output-on-failure
+      - run: gcovr --root . --filter 'src/(core|protocol|persistence)/' --print-summary --xml-pretty --output coverage.xml
+      - uses: actions/upload-artifact@v4
+        with:
+          name: coverage
+          path: coverage.xml
+  docker:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - run: docker build -t mini-redis .
+      - run: |
+          docker run -d --name mini-redis -p 6380:6380 mini-redis
+          python3 scripts/docker_smoke.py
+          docker stop -t 15 mini-redis
+          test "$(docker inspect mini-redis --format '{{.State.ExitCode}}')" = 0
