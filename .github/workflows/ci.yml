@@ -53,11 +53,19 @@ jobs:
       - run: sudo apt-get update && sudo apt-get install -y gcovr
       - run: cmake -S . -B build -DCMAKE_BUILD_TYPE=Debug -DENABLE_COVERAGE=ON
       - run: cmake --build build -j 2 && ctest --test-dir build --output-on-failure
-      - run: gcovr --root . --filter 'src/(core|protocol|persistence)/' --print-summary --xml-pretty --output coverage.xml
+      - run: gcovr --root . --filter 'src/(core|protocol|persistence)/' --print-summary --fail-under-line 80 --xml-pretty --output coverage.xml
       - uses: actions/upload-artifact@v4
         with:
           name: coverage
           path: coverage.xml
+  static-analysis:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - run: sudo apt-get update && sudo apt-get install -y clang-tidy
+      - run: cmake -S . -B build -DBUILD_TESTING=OFF -DCMAKE_BUILD_TYPE=Debug
+      - run: cmake --build build -j 2
+      - run: find src -name '*.cpp' -print0 | xargs -0 clang-tidy -p build --warnings-as-errors='*' --quiet
   docker:
     runs-on: ubuntu-24.04
     steps:

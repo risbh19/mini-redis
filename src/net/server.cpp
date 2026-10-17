@@ -38,7 +38,8 @@ void Server::run() {
   if (::getsockname(listener_.get(), reinterpret_cast<sockaddr*>(&addr), &len) < 0)
     throw std::runtime_error("getsockname failed");
   std::cout << "READY " << config_.bind << ':' << ntohs(addr.sin_port) << ' ' << config_.io_model
-            << std::endl;
+            << '\n'
+            << std::flush;
   if (config_.io_model == "epoll")
     run_epoll();
   else
@@ -68,7 +69,7 @@ void Server::process(Connection& c) {
 bool Server::read(Connection& c) {
   std::array<char, 16384> bytes{};
   std::size_t total = 0;
-  while (!c.closing && c.pending() < config_.output_limit && total < 256 * 1024) {
+  while (!c.closing && c.pending() < config_.output_limit && total < 256ULL * 1024) {
     const auto n = ::recv(c.fd.get(), bytes.data(), bytes.size(), 0);
     if (n == 0) {
       c.read_eof = true;
@@ -92,7 +93,7 @@ bool Server::read(Connection& c) {
 }
 bool Server::write(Connection& c) {
   std::size_t total = 0;
-  while (c.pending() && total < 256 * 1024) {
+  while (c.pending() && total < 256ULL * 1024) {
     const auto n = ::send(c.fd.get(), c.output.data() + c.sent, c.pending(), MSG_NOSIGNAL);
     if (n < 0) {
       if (errno == EINTR) continue;

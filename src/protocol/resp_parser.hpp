@@ -1,16 +1,17 @@
 #pragma once
 #include <cstddef>
+#include <cstdint>
 #include <string>
 #include <string_view>
 #include <vector>
 namespace mr {
 struct ParserLimits {
   std::size_t max_bulk{512ULL * 1024 * 1024};
-  std::size_t max_array{1024 * 1024};
-  std::size_t max_inline{64 * 1024};
+  std::size_t max_array{1024ULL * 1024};
+  std::size_t max_inline{64ULL * 1024};
   std::size_t max_request{513ULL * 1024 * 1024};
 };
-enum class ParseStatus { Complete, Incomplete, ProtocolError };
+enum class ParseStatus : std::uint8_t { Complete, Incomplete, ProtocolError };
 struct ParseResult {
   ParseStatus status{ParseStatus::Incomplete};
   std::vector<std::string> args;

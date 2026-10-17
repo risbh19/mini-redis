@@ -7,7 +7,7 @@
 #include "core/store.hpp"
 #include "net/socket_util.hpp"
 namespace mr {
-enum class FsyncPolicy { Always, EverySecond, No };
+enum class FsyncPolicy : std::uint8_t { Always, EverySecond, No };
 struct ReplayResult {
   std::size_t commands{}, recovered_bytes{};
 };

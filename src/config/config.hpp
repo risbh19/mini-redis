@@ -18,8 +18,8 @@ struct Config {
   std::string io_model{"epoll"};
   std::size_t workers{4}, maxclients{10000};
   std::int64_t idle_timeout_ms{0};
-  std::size_t output_limit{8 * 1024 * 1024};
-  std::size_t aof_rewrite_min{64 * 1024 * 1024};
+  std::size_t output_limit{8ULL * 1024 * 1024};
+  std::size_t aof_rewrite_min{64ULL * 1024 * 1024};
   ParserLimits parser_limits;
   bool cli{}, help{};
 };

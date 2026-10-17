@@ -8,8 +8,10 @@
 #include "persistence/crc32.hpp"
 namespace mr {
 namespace {
-void le(std::string& out, std::uint64_t n, unsigned width) {
-  for (unsigned i = 0; i < width; ++i) out += static_cast<char>((n >> (i * 8U)) & 0xFFU);
+template <unsigned Width>
+void append_le(std::string& out, std::uint64_t n) {
+  static_assert(Width <= 8, "integer encoding cannot exceed 64 bits");
+  for (unsigned i = 0; i < Width; ++i) out += static_cast<char>((n >> (i * 8U)) & 0xFFU);
 }
 std::uint64_t read_le(const std::string& bytes, std::size_t& pos, unsigned width, std::size_t end) {
   if (pos > end || end - pos < width) throw std::runtime_error("truncated snapshot");
@@ -26,14 +28,14 @@ std::string encode_snapshot(const std::vector<Record>& records) {
         r.value.size() > std::numeric_limits<std::uint32_t>::max())
       throw std::runtime_error("snapshot string too long");
     out += '\x01';
-    le(out, static_cast<std::uint64_t>(r.expire_at_ms.value_or(0)), 8);
-    le(out, r.key.size(), 4);
+    append_le<8>(out, static_cast<std::uint64_t>(r.expire_at_ms.value_or(0)));
+    append_le<4>(out, r.key.size());
     out += r.key;
-    le(out, r.value.size(), 4);
+    append_le<4>(out, r.value.size());
     out += r.value;
   }
   out += static_cast<char>(0xFF);
-  le(out, crc32(out), 4);
+  append_le<4>(out, crc32(out));
   return out;
 }
 std::vector<Record> decode_snapshot(const std::string& bytes) {

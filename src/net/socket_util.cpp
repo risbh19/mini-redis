@@ -80,6 +80,8 @@ void sync_fd(int fd) {
     if (errno != EINTR) throw sys_error("fsync");
   }
 }
+// Destination/content order follows file-writing APIs; both parameters are owned by callers.
+// NOLINTNEXTLINE(bugprone-easily-swappable-parameters)
 void atomic_file(const std::string& path, const std::string& bytes) {
   const auto temp = path + ".tmp";
   UniqueFd fd(::open(temp.c_str(), O_WRONLY | O_CREAT | O_TRUNC | O_CLOEXEC, 0600));

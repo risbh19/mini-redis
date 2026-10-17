@@ -16,6 +16,8 @@ std::string policy(FsyncPolicy p) {
   return p == FsyncPolicy::Always ? "always" : p == FsyncPolicy::No ? "no" : "everysec";
 }
 }  // namespace
+// Name/value order follows CLI configuration; invalid names fail validation.
+// NOLINTNEXTLINE(bugprone-easily-swappable-parameters)
 void set_config(Config& c, const std::string& name, const std::string& v) {
   const auto k = lower(name);
   if (k == "bind")

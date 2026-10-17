@@ -18,8 +18,8 @@ struct Record {
   std::string key, value;
   std::optional<std::int64_t> expire_at_ms;
 };
-enum class EvictionPolicy { NoEviction, AllKeysLru };
-enum class SetResult { Stored, ConditionFailed, OutOfMemory };
+enum class EvictionPolicy : std::uint8_t { NoEviction, AllKeysLru };
+enum class SetResult : std::uint8_t { Stored, ConditionFailed, OutOfMemory };
 struct StoreStats {
   std::uint64_t hits{}, misses{}, expired{}, evicted{};
 };
