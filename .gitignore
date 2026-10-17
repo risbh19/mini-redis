@@ -1,6 +1,6 @@
 /build*/
 /.tools/
-/.data/
+/.data*/
 /artifacts/
 *.mrdb
 *.aof

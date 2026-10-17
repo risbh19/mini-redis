@@ -70,6 +70,41 @@ docker run --rm --name mini-redis -p 127.0.0.1:6380:6380 \
   -v mini-redis-data:/data mini-redis
 ```
 
+## Browser dashboard (localhost)
+
+A complete local frontend lives in `web/`. It connects to the real C++ server
+through a small Python HTTP-to-RESP bridge; it does not simulate a database.
+It needs Python 3.9+ and no pip or npm packages. On Windows, run inside WSL Ubuntu:
+
+```bash
+python3 web/server.py --binary build/mini-redis
+```
+
+Open **http://localhost:8080** in your browser. This command manages both
+processes, chooses a free Redis port, and keeps the dashboard's persistent data
+in `.data-web/`. Stop with Ctrl+C. Use `--binary build-clang/mini-redis` if that
+is your build directory, or `--port 8081` if port 8080 is occupied.
+On this Windows checkout you can also double-click `start-dashboard.cmd` after
+building the server in WSL; keep its terminal window open while using the app.
+
+The dashboard includes live server statistics, searchable/paginated keys,
+create/edit/delete with a confirmation dialog, TTL countdowns, a JSON formatter,
+and a command console with quoting and command history. Sample data is added
+only when you click **Load sample keys**. Binary keys and values can be inspected;
+binary values are read-only in the text editor. Saving an edited key restarts
+the TTL shown in the form; leaving it empty removes expiry.
+
+To connect to an already running instance instead:
+
+```bash
+python3 web/server.py --redis-host 127.0.0.1 --redis-port 6380
+```
+
+The HTTP listener is loopback-only and same-origin; it is a local administration
+tool without authentication, not a public deployment. The console allows the
+supported data commands and `INFO`; server administration stays in the CLI.
+The explorer uses `KEYS` and is intended for small development datasets.
+
 ## Implemented
 
 - [x] Local REPL, quoted inline commands, structured reply variant.
