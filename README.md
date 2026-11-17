@@ -1,6 +1,20 @@
+<div align="center">
+
 # mini-redis
 
+**Build a key-value server from the socket to the storage engine.**
+
 [![CI](https://github.com/risbh19/mini-redis/actions/workflows/ci.yml/badge.svg)](https://github.com/risbh19/mini-redis/actions/workflows/ci.yml)
+
+![C++17](https://img.shields.io/badge/C%2B%2B17-334155?style=flat-square)
+![Linux](https://img.shields.io/badge/Linux-334155?style=flat-square)
+![CMake](https://img.shields.io/badge/CMake-334155?style=flat-square)
+
+[Quick start](#quick-start) · [Architecture](#architecture) · [Configuration](#configuration)
+
+</div>
+
+---
 
 A string key-value server written from scratch in **C++17**, with a Linux `epoll`
 reactor, RESP2, TTL, snapshots, an append-only log, exact LRU eviction, and a custom
@@ -13,7 +27,19 @@ command subset**, not a replacement for Redis. Both `redis-cli` and
 `redis-benchmark -t set,get` are supported. See [limitations](#limitations) before
 using it with a general-purpose Redis client.
 
-## Build and run
+## The problem
+
+A networked key-value store has to coordinate protocol parsing, expiry, memory pressure and persistence while serving clients. mini-redis makes those mechanisms explicit through a custom hash table, socket reactor and recoverable storage formats.
+
+## At a glance
+
+| Area | What it covers |
+| --- | --- |
+| Protocol | Binary-safe RESP2, fragmented input and pipelining |
+| Storage | Incremental rehashing, TTL and exact LRU |
+| Persistence | Snapshots, append-only replay and configurable fsync |
+
+## Quick start
 
 Linux with GCC 11+ or Clang 14+, CMake 3.14+, and Python 3 for integration tests.
 On Windows, run these commands **inside WSL2 Ubuntu**. Internet access is needed
@@ -105,7 +131,7 @@ tool without authentication, not a public deployment. The console allows the
 supported data commands and `INFO`; server administration stays in the CLI.
 The explorer uses `KEYS` and is intended for small development datasets.
 
-## Implemented
+## Highlights
 
 - [x] Local REPL, quoted inline commands, structured reply variant.
 - [x] Binary-safe RESP2 requests/replies, fragmentation, pipelining, parser limits.
@@ -127,15 +153,13 @@ The explorer uses `KEYS` and is intended for small development datasets.
 
 ```mermaid
 flowchart TD
-  client[redis-cli / TCP client] --> io[epoll reactor OR poll + thread pool]
-  io --> connection[Connection: input / output / partial write offset]
-  connection --> parser[Incremental RESP2 / inline parser]
-  parser --> commands[CommandTable: arity, dispatch, transaction lock]
-  commands --> store[Store: custom hash table + TTL index + exact LRU]
-  commands --> persistence[AOF / atomic snapshot]
-  commands --> reply[Reply variant]
-  reply --> writer[RESP writer / local CLI formatter]
-  writer --> client
+  client["TCP clients"] --> io["epoll or thread-pool I/O"]
+  io --> parser["Incremental RESP2 parser"]
+  parser --> commands["Command dispatch"]
+  commands --> store["Hash table, TTL and LRU"]
+  commands --> persist["AOF and snapshots"]
+  commands --> reply["RESP2 replies"]
+  reply --> client
 ```
 
 The reactor executes all commands on one thread. The pool executes socket tasks
